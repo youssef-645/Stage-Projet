@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamps();
             $table->foreignId('groupe_id')->constrained('groupes')->onDelete("cascade");
-            $table->foreignId('parent_id')->constrained('parents')->onDelete("cascade");
+            $table->foreignId('parente_id')->constrained('parentes')->onDelete("cascade");
         });
     }
 
