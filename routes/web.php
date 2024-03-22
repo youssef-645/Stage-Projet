@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EleveController;
 use App\Http\Controllers\HomeController;
 
 
@@ -15,6 +16,7 @@ use App\Http\Controllers\HomeController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
 Route::get('/', [AuthController::class, "login"])->name("login");
 
 Route::post('/login', [AuthController::class, "authenticate"])->name("authenticate");
@@ -25,5 +27,6 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+    Route::post('/eleves/search', [EleveController::class, 'search']);
+    Route::resource("/eleves", EleveController::class);
 });
-
