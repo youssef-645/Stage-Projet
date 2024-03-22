@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EleveController;
+use App\Http\Controllers\EnseignantController;
 use App\Http\Controllers\HomeController;
 
 
@@ -28,5 +29,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
     Route::post('/eleves/search', [EleveController::class, 'search']);
+    Route::get('enseignants/search', [EnseignantController::class, 'search'])->name('enseignants.search');
     Route::resource("/eleves", EleveController::class);
+    Route::resource("/enseignants", EnseignantController::class);
 });
