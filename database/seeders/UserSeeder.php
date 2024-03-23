@@ -26,15 +26,15 @@ class UserSeeder extends Seeder
                 'telephone' => $faker->phoneNumber,
             ]);
         }
+
         User::create([
-            'username' => $faker->firstName,
+            'username' => "admin",
             'nom' => $faker->firstName,
             'prenom' => $faker->firstName,
             'password' => Hash::make("admin"),
             'email' => $faker->unique()->safeEmail,
             'avatar' => $faker->imageUrl(),
             'telephone' => $faker->phoneNumber,
-            'role' => "admin",
         ]);
     }
 }

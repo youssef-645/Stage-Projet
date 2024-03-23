@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function login(){
+    public function login()
+    {
         return view("auth.login");
     }
 
@@ -19,16 +20,18 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function index(){
+    public function index()
+    {
         return view("auth.login");
     }
 
 
-    public function authenticate(){
-            // dd(request()->all());
+    public function authenticate()
+    {
+        // dd(request()->all());
         $validated = request()->validate([
             "username" => "required|min:3",
-            "password" => "required|min:8"
+            "password" => "required|min:4"
         ]);
 
         if (auth()->attempt($validated)) {
@@ -40,6 +43,5 @@ class AuthController extends Controller
         return redirect()->route('login')->withErrors([
             'error' => 'Invalid username or password.',
         ]);
-
     }
 }
