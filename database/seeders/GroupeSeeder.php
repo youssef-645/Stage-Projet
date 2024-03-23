@@ -17,7 +17,7 @@ class GroupeSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Groupe::create([
                 'nom' => 'Groupe ' . ($i + 1),
                 'anne_scholaire' => $faker->date(),

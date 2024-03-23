@@ -18,7 +18,7 @@ class EnseignantSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 10; $i++) {
             Enseignant::insert([
                 'nom' => $faker->lastName,
                 'prenom' => $faker->firstName,

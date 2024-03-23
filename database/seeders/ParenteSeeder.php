@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Enseignant;
+use App\Models\Parente;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
@@ -18,8 +19,8 @@ class ParenteSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 50; $i++) {
-            Enseignant::insert([
+        for ($i = 0; $i < 10; $i++) {
+            Parente::insert([
                 'nom' => $faker->lastName,
                 'prenom' => $faker->firstName,
                 'telephone' => $faker->phoneNumber,

@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
             ClasseSeeder::class,
             GroupeSeeder::class,
             MatiereSeeder::class,
+            EnseignantSeeder::class,
+            ParenteSeeder::class,
             EleveSeeder::class,
             NoteSeeder::class,
         ]);
