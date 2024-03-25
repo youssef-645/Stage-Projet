@@ -4,17 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/app.css" rel="stylesheet">
+
+    <title>@yield('title', 'Dashboard')</title>
 </head>
 
 <body>
     <header>
-
-        {{-- navbar --}}
+        @include("layouts.navbar")
     </header>
 
-    <main>
-        @yield('content')
+    <main class="row">
+        <div class="col-3">
+            @include("layouts.sidebar")
+        </div>
+        <dic class="col">
+            @yield('content')
+        </dic>
     </main>
 
     <footer>

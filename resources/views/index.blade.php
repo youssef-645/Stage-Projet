@@ -1,5 +1,7 @@
-<h1>dashboard</h1>
-<form action="{{ route('logout') }}" method="post">
-    @csrf
-    <button type="submit">logout</button>
-</form>
+@extends('layouts.app')
+
+@section('title', 'Dashboard')
+
+@section('content')
+<h1>body</h1>
+@endsection
