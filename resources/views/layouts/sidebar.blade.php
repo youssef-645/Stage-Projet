@@ -23,5 +23,8 @@
     <li class="list-group-item list-group-item-action">
       <a class="text-dark  text-decoration-none" href="#">Classes</a>
     </li>
+    <li class="list-group-item list-group-item-action">
+      <a class="text-dark  text-decoration-none" href="#">Eleves</a>
+    </li>
   </ul>
 </aside>
