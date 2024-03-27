@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Classe;
 use Illuminate\Http\Request;
 
 class ClasseController extends Controller
@@ -12,7 +12,8 @@ class ClasseController extends Controller
      */
     public function index()
     {
-        //
+        $classes = Classe::all();
+        return view('classes.index', compact('classes'));
     }
 
     /**
@@ -20,7 +21,7 @@ class ClasseController extends Controller
      */
     public function create()
     {
-        //
+        return view('classes.create');
     }
 
     /**
@@ -28,38 +29,41 @@ class ClasseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Classe::create($request->all());
+        return redirect()->route('classes.index')->with('success', 'Classe créée avec succès.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Classe $classe)
     {
-        //
+        return view('classes.show', compact('classe'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Classe $classe)
     {
-        //
+        return view('classes.edit', compact('classe'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Classe $classe)
     {
-        //
+        $classe->update($request->all());
+        return redirect()->route('classes.index')->with('success', 'Classe mise à jour avec succès.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Classe $classe)
     {
-        //
+        $classe->delete();
+        return redirect()->route('classes.index')->with('success', 'Classe supprimée avec succès.');
     }
 }

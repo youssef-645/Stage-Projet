@@ -9,7 +9,6 @@
             <th>Nom</th>
             <th>Prénom</th>
             <th>Téléphone</th>
-            <!-- Ajoutez d'autres colonnes si nécessaire -->
         </tr>
     </thead>
     <tbody>
@@ -18,7 +17,6 @@
             <td>{{ $parent->nom }}</td>
             <td>{{ $parent->prenom }}</td>
             <td>{{ $parent->telephone }}</td>
-            <!-- Ajoutez d'autres colonnes si nécessaire -->
         </tr>
         @endforeach
     </tbody>

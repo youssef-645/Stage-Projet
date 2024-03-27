@@ -20,7 +20,7 @@
         <div class="col-3">
             @include("layouts.sidebar")
         </div>
-        <dic class="col">
+        <dic class="col-8">
             @yield('content')
         </dic>
     </main>
