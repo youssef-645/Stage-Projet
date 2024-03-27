@@ -6,3 +6,9 @@
 .sky-background {
   background-color: #87CEEB;
 }
+.activated{
+  background-color: #b4d7e6;
+}
+.list-group li:hover {
+  background-color: #b4d7e6;
+}

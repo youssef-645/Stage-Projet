@@ -1,6 +1,6 @@
 <aside class="sidebar">
   <ul class="list-group ">
-    <li class="list-group-item list-group-item-action border-top-0 ">
+    <li class="list-group-item list-group-item-action border-top-0 activated">
 
       <a class="text-dark  text-decoration-none" href="#">Dashboard</a>
     </li>

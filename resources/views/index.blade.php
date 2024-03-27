@@ -9,8 +9,12 @@
         <div class="card-body d-flex align-items-center justify-content-center">
             <i class="fa fa-home fa-5x text-white"></i>
             <div class="ml-3 text-white">
-                Dashboard
-                <span><a href="dashboard.php" class="text-white">View Details</a></span>
+                Les Classes
+                <span>
+                    <form action="{{ route('classes.index') }}" method="GET">
+                        <button type="submit" class="btn btn-link btn-sm">Details</button>
+                    </form>
+                </span>
             </div>
         </div>
     </div>
@@ -20,8 +24,13 @@
         <div class="card-body d-flex align-items-center justify-content-center">
             <i class="fa fa-users fa-5x text-white"></i>
             <div class="ml-3 text-white">
-                Enseignants
-                <span><a href="enseignants.php" class="text-white">View Details</a></span>
+                Les Enseignants
+                <span>
+                    <form action="{{ route('enseignants.index') }}" method="GET">
+                        <button type="submit" class="btn btn-link btn-sm">Details</button>
+                    </form>
+                </span>
+
             </div>
         </div>
     </div>
@@ -31,8 +40,13 @@
         <div class="card-body d-flex align-items-center justify-content-center">
             <i class="fa fa-book fa-5x text-white"></i>
             <div class="ml-3 text-white">
-                Matieres
-                <span><a href="matieres.php" class="text-white">View Details</a></span>
+                Les Matieres
+                <span>
+                    <form action="{{ route('matieres.index') }}" method="GET">
+                        <button type="submit" class="btn btn-link btn-sm">Details</button>
+                    </form>
+                </span>
+
             </div>
         </div>
     </div>
@@ -42,8 +56,12 @@
         <div class="card-body d-flex align-items-center justify-content-center">
             <i class="fa fa-clipboard fa-5x text-white"></i>
             <div class="ml-3 text-white">
-                Notes
-                <span><a href="notes.php" class="text-white">View Details</a></span>
+                Les Notes
+                <span>
+                    <form action="{{ route('notes.index') }}" method="GET">
+                        <button type="submit" class="btn btn-link btn-sm">Details</button>
+                    </form>
+                </span>
             </div>
         </div>
     </div>
