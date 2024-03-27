@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Models\Note;
 use Illuminate\Http\Request;
 
 class NoteController extends Controller
@@ -12,7 +12,8 @@ class NoteController extends Controller
      */
     public function index()
     {
-        //
+        $notes = Note::orderBy('date', 'desc')->paginate(10);
+        return view('notes.index', compact('notes'));
     }
 
     /**
@@ -20,7 +21,7 @@ class NoteController extends Controller
      */
     public function create()
     {
-        //
+        return view('notes.create');
     }
 
     /**
@@ -28,38 +29,41 @@ class NoteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Note::create($request->all());
+        return redirect()->route('notes.index')->with('success', 'Note créée avec succès.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Note $note)
     {
-        //
+        return view('notes.show', compact('note'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Note $note)
     {
-        //
+        return view('notes.edit', compact('note'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Note $note)
     {
-        //
+        $note->update($request->all());
+        return redirect()->route('notes.index')->with('success', 'Note mise à jour avec succès.');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Note $note)
     {
-        //
+        $note->delete();
+        return redirect()->route('notes.index')->with('success', 'Note supprimée avec succès.');
     }
 }
