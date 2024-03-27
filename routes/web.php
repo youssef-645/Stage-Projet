@@ -9,6 +9,7 @@ use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\NoteController;
+use App\Http\Controllers\ParentController;
 use App\Models\Classe;
 
 /*
@@ -36,5 +37,5 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::resource("/classes", ClasseController::class);
     Route::resource("/matieres", MatiereController::class);
     Route::resource("/notes", NoteController::class);
-    Route::resource("/parents", NoteController::class);
+    Route::resource("/parents", ParentController::class);
 });
