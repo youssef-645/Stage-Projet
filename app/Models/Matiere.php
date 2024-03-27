@@ -12,7 +12,7 @@ class Matiere extends Model
 
     public function enseignantes()
     {
-        return $this->belongsToMany(Enseignante::class);
+        return $this->belongsToMany(Enseignant::class);
     }
 
     public function classes()
