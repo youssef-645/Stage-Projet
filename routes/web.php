@@ -40,4 +40,5 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::resource("/classes", ClasseController::class);
     Route::resource("/matieres", MatiereController::class);
     Route::resource("/notes", NoteController::class);
+    Route::resource("/parents", NoteController::class);
 });

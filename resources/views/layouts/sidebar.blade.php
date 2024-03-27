@@ -2,29 +2,43 @@
   <ul class="list-group ">
     <li class="list-group-item list-group-item-action border-top-0 activated">
 
-      <a class="text-dark  text-decoration-none" href="#">Dashboard</a>
+      <form action="{{ route('dashboard') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Dashboard</button>
+      </form>
     </li>
     <li class="list-group-item list-group-item-action ">
 
-      <a class="text-dark  text-decoration-none" href="#">Enseignants</a>
+      <form action="{{ route('enseignants.index') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Enseignates</button>
+      </form>
     </li>
     <li class="list-group-item list-group-item-action">
 
-      <a class="text-dark  text-decoration-none" href="#">Matieres</a>
+      <form action="{{ route('matieres.index') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Matieres</button>
+      </form>
     </li>
     <li class="list-group-item list-group-item-action">
 
-      <a class="text-dark  text-decoration-none" href="#">Notes</a>
+      <form action="{{ route('notes.index') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Notes</button>
+      </form>
     </li>
     <li class="list-group-item list-group-item-action">
 
-      <a class="text-dark  text-decoration-none" href="#">Parents</a>
+      <form action="{{ route('parents.index') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Parents</button>
+      </form>
     </li>
     <li class="list-group-item list-group-item-action">
-      <a class="text-dark  text-decoration-none" href="#">Classes</a>
+      <form action="{{ route('classes.index') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Classes</button>
+      </form>
     </li>
     <li class="list-group-item list-group-item-action">
-      <a class="text-dark  text-decoration-none" href="#">Eleves</a>
+      <form action="{{ route('eleves.index') }}" method="GET">
+        <button type="submit" class="btn btn-link btn-sm">Eleves</button>
+      </form>
     </li>
   </ul>
 </aside>
