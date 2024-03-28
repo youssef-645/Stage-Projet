@@ -1,44 +1,29 @@
 <aside class="sidebar">
-  <ul class="list-group ">
-    <li class="list-group-item list-group-item-action border-top-0 activated">
-
-      <form action="{{ route('dashboard') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Dashboard</button>
-      </form>
-    </li>
-    <li class="list-group-item list-group-item-action ">
-
-      <form action="{{ route('enseignants.index') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Enseignates</button>
-      </form>
-    </li>
-    <li class="list-group-item list-group-item-action">
-
-      <form action="{{ route('matieres.index') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Matieres</button>
-      </form>
-    </li>
-    <li class="list-group-item list-group-item-action">
-
-      <form action="{{ route('notes.index') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Notes</button>
-      </form>
-    </li>
-    <li class="list-group-item list-group-item-action">
-
-      <form action="{{ route('parents.index') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Parents</button>
-      </form>
-    </li>
-    <li class="list-group-item list-group-item-action">
-      <form action="{{ route('classes.index') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Classes</button>
-      </form>
-    </li>
-    <li class="list-group-item list-group-item-action">
-      <form action="{{ route('eleves.index') }}" method="GET">
-        <button type="submit" class="btn btn-link btn-sm">Eleves</button>
-      </form>
-    </li>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action" data-route="{{ route('dashboard') }}">Dashboard</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('enseignants.index') }}">Enseignates</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('matieres.index') }}">Matieres</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('notes.index') }}">Notes</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('parents.index') }}">Parents</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('classes.index') }}">Classes</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('eleves.index') }}">Eleves</li>
   </ul>
 </aside>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var listItems = document.querySelectorAll('.list-group-item');
+
+    listItems.forEach(function(item) {
+      item.addEventListener('click', function() {
+        var route = this.getAttribute('data-route');
+        window.location.href = route;
+
+        listItems.forEach(function(item) {
+          item.classList.remove('activated');
+        });
+
+        this.classList.add('activated');
+      });
+    });
+  });
+</script>

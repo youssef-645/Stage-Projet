@@ -7,14 +7,13 @@
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/app.css" rel="stylesheet">
+    <script src="assets/js/script.js"></script>
 
     <title>@yield('title', 'Dashboard')</title>
 </head>
 
 <body>
-    <header>
-        @include("layouts.navbar")
-    </header>
+    @include("layouts.navbar")
 
     <main class="row">
         <div class="col-3">
