@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClasseController;
@@ -38,4 +39,5 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::resource("/matieres", MatiereController::class);
     Route::resource("/notes", NoteController::class);
     Route::resource("/parents", ParentController::class);
+    Route::get('/admin/info', [AccountController::class, 'index'])->name('admin.info');
 });
