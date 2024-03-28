@@ -12,3 +12,8 @@
 .list-group li:hover {
   background-color: #b4d7e6;
 }
+
+.sidebar .list-group-item {
+  cursor: pointer;
+}
+
