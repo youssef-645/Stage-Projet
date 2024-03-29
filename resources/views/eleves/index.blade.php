@@ -9,7 +9,7 @@
             <button type="submit" class="mt-4 mb-4 btn btn-primary">Search</button>
         </div>
     </form>
-    @if($eleves)
+    @if($eleves && $eleves->count() > 0)
     <table class="table">
         <thead>
             <tr>
@@ -30,11 +30,15 @@
                 <td>{{ $eleve->date_naissance }}</td>
                 <td>{{ $eleve->adresse }}</td>
                 <td>{{ $eleve->email }}</td>
-                <td>{{ $eleve->groupe->nom }}</td>
+                <td>{{ $eleve->groupe ? $eleve->groupe->nom : 'N/A' }}</td>
                 <td>
+                    @if($eleve->parents)
                     @foreach($eleve->parents as $parent)
                     {{ $parent->nom }} {{ $parent->prenom }}<br>
                     @endforeach
+                    @else
+                    N/A
+                    @endif
                 </td>
             </tr>
             @endforeach
