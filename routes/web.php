@@ -11,7 +11,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\ParentController;
-use App\Models\Classe;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,8 +29,10 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
     Route::post('/eleves/search', [EleveController::class, 'search'])->name('eleves.search');
-    Route::get('/enseignants/search', [EnseignantController::class, 'search'])->name('enseignants.search');
+    Route::post('/enseignants/search', [EnseignantController::class, 'search'])->name('enseignants.search');
+
     Route::resource("/eleves", EleveController::class);
     Route::resource("/enseignants", EnseignantController::class);
     Route::resource("/groupes", GroupeController::class);
@@ -39,6 +40,7 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::resource("/matieres", MatiereController::class);
     Route::resource("/notes", NoteController::class);
     Route::resource("/parents", ParentController::class);
+
     Route::get('/account/info', [AccountController::class, 'index'])->name('account.info');
     Route::post('/account/password', [AccountController::class, 'updatePassword'])->name('account.password');
 });

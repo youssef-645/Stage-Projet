@@ -9,9 +9,10 @@
         <div class="card sky-background clickable-card" data-route="{{ route('classes.index') }}" style="height: 150px; background-color: tomato;">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-home fa-5x text-white"></i>
-                <div class="ml-3 text-white">
-                    Les Classes
-                </div>
+                <h1 class="ml-3 text-white">
+                    Les classes
+                    <h1 class="badge m-2 bg-success badge-lg">{{ $classCount }}</h1>
+                </h1>
             </div>
         </div>
     </div>
@@ -21,9 +22,10 @@
         <div class="card sky-background clickable-card" data-route="{{ route('enseignants.index') }}" style="height: 150px; background-color: lightgreen;">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-users fa-5x text-white"></i>
-                <div class="ml-3 text-white">
-                    Les Enseignants
-                </div>
+                <h1 class="ml-3 text-white">
+                    Les enseignants
+                    <h1 class="badge m-2 bg-success badge-lg">{{ $enseignantCount }}</h1>
+                </h1>
             </div>
         </div>
     </div>
@@ -33,9 +35,10 @@
         <div class="card sky-background clickable-card" data-route="{{ route('matieres.index') }}" style="height: 150px; background-color: grey;">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-book fa-5x text-white"></i>
-                <div class="ml-3 text-white">
-                    Les Matieres
-                </div>
+                <h1 class="ml-3 text-white">
+                    Les matieres
+                    <h1 class="badge m-2 bg-success badge-lg">{{ $matiereCount }}</h1>
+                </h1>
             </div>
         </div>
     </div>
@@ -45,9 +48,10 @@
         <div class="card sky-background clickable-card" data-route="{{ route('notes.index') }}" style="height: 150px; background-color: orange;">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-clipboard fa-5x text-white"></i>
-                <div class="ml-3 text-white">
-                    Les Notes
-                </div>
+                <h1 class="ml-3 text-white">
+                    Les notes
+                    <h1 class="badge m-2 bg-success badge-lg">{{ $noteCount }}</h1>
+                </h1>
             </div>
         </div>
     </div>
