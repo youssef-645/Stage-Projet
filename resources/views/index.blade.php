@@ -6,7 +6,7 @@
 <!-- Dashboard -->
 <div class="row p-4 g-4">
     <div class="col-md-6">
-        <div class="card sky-background" style="height: 150px;">
+        <div class="card sky-background" style="height: 150px;background-color:tomato">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-home fa-5x text-white"></i>
                 <div class="ml-3 text-white">
@@ -23,7 +23,7 @@
 
     <!-- Enseignants -->
     <div class="col-md-6">
-        <div class="card sky-background" style="height: 150px;">
+        <div class="card sky-background" style="height: 150px;;background-color:lightgreen">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-users fa-5x text-white"></i>
                 <div class="ml-3 text-white">
@@ -40,7 +40,7 @@
 
     <!-- Matieres -->
     <div class="col-md-6">
-        <div class="card sky-background" style="height: 150px;">
+        <div class="card sky-background" style="height: 150px;;background-color:grey">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-book fa-5x text-white"></i>
                 <div class="ml-3 text-white">
@@ -57,7 +57,7 @@
 
     <!-- Notes -->
     <div class="col-md-6">
-        <div class="card sky-background" style="height: 150px;">
+        <div class="card sky-background" style="height: 150px;;background-color:orange">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-clipboard fa-5x text-white"></i>
                 <div class="ml-3 text-white">
