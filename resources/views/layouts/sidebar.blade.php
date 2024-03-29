@@ -7,7 +7,7 @@
     <li class="list-group-item list-group-item-action" data-route="{{ route('parents.index') }}">Parents</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('classes.index') }}">Classes</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('eleves.index') }}">Eleves</li>
-    <li class="list-group-item list-group-item-action" data-route="{{ route('admin.info') }}">Account</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('account.info') }}">Account</li>
   </ul>
 </aside>
 <script>

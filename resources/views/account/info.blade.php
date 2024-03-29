@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Admin Information')
+@section('title', 'user Information')
 
 @section('content')
 <div class="container">
@@ -9,43 +9,43 @@
     <tbody>
       <tr>
         <th>ID</th>
-        <td>{{ $admin->id }}</td>
+        <td>{{ $user->id }}</td>
       </tr>
       <tr>
         <th>Username</th>
-        <td>{{ $admin->username }}</td>
+        <td>{{ $user->username }}</td>
       </tr>
       <tr>
         <th>Nom</th>
-        <td>{{ $admin->nom }}</td>
+        <td>{{ $user->nom }}</td>
       </tr>
       <tr>
         <th>Prénom</th>
-        <td>{{ $admin->prenom }}</td>
+        <td>{{ $user->prenom }}</td>
       </tr>
       <tr>
         <th>Email</th>
-        <td>{{ $admin->email }}</td>
+        <td>{{ $user->email }}</td>
       </tr>
       <tr>
         <th>Avatar</th>
-        <td>{{ $admin->avatar }}</td>
+        <td>{{ $user->avatar }}</td>
       </tr>
       <tr>
         <th>Téléphone</th>
-        <td>{{ $admin->telephone }}</td>
+        <td>{{ $user->telephone }}</td>
       </tr>
       <tr>
         <th>Role</th>
-        <td>{{ $admin->role }}</td>
+        <td>{{ $user->role }}</td>
       </tr>
       <tr>
         <th>Created At</th>
-        <td>{{ $admin->created_at }}</td>
+        <td>{{ $user->created_at }}</td>
       </tr>
       <tr>
         <th>Updated At</th>
-        <td>{{ $admin->updated_at }}</td>
+        <td>{{ $user->updated_at }}</td>
       </tr>
     </tbody>
   </table>

@@ -39,5 +39,6 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
     Route::resource("/matieres", MatiereController::class);
     Route::resource("/notes", NoteController::class);
     Route::resource("/parents", ParentController::class);
-    Route::get('/admin/info', [AccountController::class, 'index'])->name('admin.info');
+    Route::get('/account/info', [AccountController::class, 'index'])->name('account.info');
+    Route::post('/account/password', [AccountController::class, 'updatePassword'])->name('account.password');
 });
