@@ -44,6 +44,7 @@
             @endforeach
         </tbody>
     </table>
+    {{ $eleves->links() }} <!-- Pagination Links -->
     @else
     <p>No eleves found.</p>
     @endif
