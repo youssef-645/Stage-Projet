@@ -13,6 +13,6 @@ class Parente extends Model
 
     public function eleves()
     {
-        return $this->belongsToMany(Eleve::class);
+        return $this->belongsToMany(Eleve::class)->withTimestamps();
     }
 }

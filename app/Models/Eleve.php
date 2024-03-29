@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Eleve extends Model
 {
     use HasFactory;
+
     protected $fillable = ['groupe_id'];
 
     public function groupe()
@@ -15,9 +16,9 @@ class Eleve extends Model
         return $this->belongsTo(Groupe::class);
     }
 
-    public function parents()
+    public function parentes()
     {
-        return $this->belongsToMany(Parent::class);
+        return $this->belongsToMany(Parente::class)->withTimestamps();
     }
 
     public function notes()
