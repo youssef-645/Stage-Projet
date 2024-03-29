@@ -19,7 +19,7 @@ class ParenteSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 40; $i++) {
             Parente::insert([
                 'nom' => $faker->lastName,
                 'prenom' => $faker->firstName,

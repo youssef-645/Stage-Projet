@@ -19,7 +19,7 @@ class NoteSeeder extends Seeder
 
         $faker = Faker::create();
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 140; $i++) {
             $eleve = Eleve::inRandomOrder()->first();
             $matiere = Matiere::inRandomOrder()->first();
             Note::create([

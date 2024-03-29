@@ -20,7 +20,7 @@ class EleveSeeder extends Seeder
 
 
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 120; $i++) {
             $groupe = Groupe::inRandomOrder()->first();
             $parente = Parente::inRandomOrder()->first();
             Eleve::create([
