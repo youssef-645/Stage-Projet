@@ -10,6 +10,7 @@
                 <th>Nom</th>
                 <th>Groupes</th>
                 <th>Classes</th>
+                <th>Enseignants</th>
             </tr>
         </thead>
         <tbody>
@@ -29,6 +30,13 @@
                     {{ $classe->nom }} <br>
                     @empty
                     Aucune classe
+                    @endforelse
+                </td>
+                <td>
+                    @forelse($matiere->enseignantes as $enseignant)
+                    {{ $enseignant->nom }} {{ $enseignant->prenom }} <br>
+                    @empty
+                    Aucun enseignant
                     @endforelse
                 </td>
             </tr>
