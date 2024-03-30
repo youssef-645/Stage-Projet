@@ -17,7 +17,7 @@ class Matiere extends Model
 
     public function classes()
     {
-        return $this->belongsToMany(Classe::class)->withPivot('enseignante_id');
+        return $this->belongsToMany(Classe::class);
     }
 
     public function groupes()
