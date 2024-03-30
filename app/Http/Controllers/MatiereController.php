@@ -12,7 +12,7 @@ class MatiereController extends Controller
      */
     public function index()
     {
-        $matieres = Matiere::all();
+        $matieres = Matiere::with('groupes', 'classes')->paginate(10); // Paginate avec 10 éléments par page
         return view('matieres.index', compact('matieres'));
     }
 
