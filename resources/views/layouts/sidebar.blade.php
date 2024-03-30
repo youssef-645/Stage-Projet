@@ -8,7 +8,6 @@
     <li class="list-group-item list-group-item-action" data-route="{{ route('classes.index') }}">Classes</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('eleves.index') }}">Eleves</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('account.info') }}">Account</li>
-    <li class="list-group-item list-group-item-action" data-route="{{ route('logout') }}">Logout</li>
   </ul>
 </aside>
 <script>
