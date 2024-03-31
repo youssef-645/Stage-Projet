@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Enseignant;
+use App\Models\Groupe;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Faker\Factory as Faker;
 
 class EnseignantSeeder extends Seeder
@@ -18,17 +18,21 @@ class EnseignantSeeder extends Seeder
     {
         $faker = Faker::create();
 
+        $groups = Groupe::all();
+
         for ($i = 0; $i < 19; $i++) {
-            Enseignant::insert([
+            $enseignant = Enseignant::create([
                 'nom' => $faker->lastName,
                 'prenom' => $faker->firstName,
                 'telephone' => $faker->phoneNumber,
                 'address' => $faker->address,
                 'date_naissance' => $faker->date(),
                 'email' => $faker->unique()->safeEmail,
-                'created_at' => now(),
-                'updated_at' => now(),
             ]);
+
+            $enseignant->groupes()->attach($groups->random()->id);
+
+            $enseignant->save();
         }
     }
 }

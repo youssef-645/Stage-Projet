@@ -14,4 +14,8 @@ class Enseignant extends Model
     {
         return $this->belongsToMany(Matiere::class);
     }
+    public function groupes()
+    {
+        return $this->belongsToMany(Groupe::class);
+    }
 }
