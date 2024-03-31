@@ -23,6 +23,7 @@
                     <th>Date de Naissance</th>
                     <th>Email</th>
                     <th>Matieres</th>
+                    <th>Groupes</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,9 +37,18 @@
                     <td>{{ $enseignant->date_naissance }}</td>
                     <td>{{ $enseignant->email }}</td>
                     <td>
-                        @foreach($enseignant->matieres as $matiere)
+                        @forelse($enseignant->matieres as $matiere)
                         {{ $matiere->nom }}@if(!$loop->last), @endif
-                        @endforeach
+                        @empty
+                        N/A
+                        @endforelse
+                    </td>
+                    <td>
+                        @forelse($enseignant->groupes as $groupe)
+                        {{ $groupe->nom }}@if(!$loop->last), @endif
+                        @empty
+                        N/A
+                        @endforelse
                     </td>
                 </tr>
                 @endforeach
