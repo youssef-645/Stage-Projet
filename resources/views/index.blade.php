@@ -6,7 +6,7 @@
 <!-- Dashboard -->
 <div class="row p-4 g-4">
     <div class="col-md-6">
-        <div class="card sky-background clickable-card" data-route="{{ route('classes.index') }}" style="height: 150px; background-color: rgb(255, 133, 111);">
+        <div class="card sky-background clickable-card" data-route="{{ route('classes.index') }}" style="height: 150px">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-home fa-5x text-white"></i>
                 <h3 class="ml-3 text-white">
@@ -19,7 +19,7 @@
 
     <!-- Enseignants -->
     <div class="col-md-6">
-        <div class="card sky-background clickable-card" data-route="{{ route('enseignants.index') }}" style="height: 150px; background-color: rgb(155, 255, 157);">
+        <div class="card sky-background clickable-card" data-route="{{ route('enseignants.index') }}" style="height: 150px">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-users fa-5x text-white"></i>
                 <h3 class="ml-3 text-white">
@@ -32,7 +32,7 @@
 
     <!-- Matieres -->
     <div class="col-md-6">
-        <div class="card sky-background clickable-card" data-route="{{ route('matieres.index') }}" style="height: 150px; background-color: rgb(191, 191, 191);">
+        <div class="card sky-background clickable-card" data-route="{{ route('matieres.index') }}" style="height: 150px">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-book fa-5x text-white"></i>
                 <h3 class="ml-3 text-white">
@@ -46,7 +46,7 @@
     <!-- Notes -->
 
     <div class="col-md-6">
-        <div class="card sky-background clickable-card" data-route="{{ route('notes.index') }}" style="height: 150px; background-color: rgb(255, 194, 81);">
+        <div class="card sky-background clickable-card" data-route="{{ route('notes.index') }}" style="height: 150px">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-clipboard fa-5x text-white"></i>
                 <h3 class="ml-3 text-white">

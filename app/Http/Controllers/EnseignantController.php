@@ -10,7 +10,7 @@ class EnseignantController extends Controller
 {
     public function index()
     {
-        $enseignants = Enseignant::all();
+        $enseignants = Enseignant::with('matieres')->paginate(10);
         return view('enseignants.index', compact('enseignants'));
     }
 

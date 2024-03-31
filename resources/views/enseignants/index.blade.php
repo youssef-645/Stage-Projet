@@ -6,15 +6,46 @@
 
     <form action="{{ route('enseignants.search') }}" method="GET">
         <div class="form-group">
-            <input type="text" name="query" class="form-control w-75" placeholder="Search...">
-            <button type="submit" class="mt-4 mb-4 btn btn-primary">Search</button>
+            <input type="text" name="query" class="form-control w-75" placeholder="Rechercher...">
+            <button type="submit" class="mt-4 mb-4 btn btn-primary">Rechercher</button>
         </div>
     </form>
 
-    <ul>
-        @foreach($enseignants as $enseignant)
-        <li>{{ $enseignant->prenom }} {{ $enseignant->nom }}</li>
-        @endforeach
-    </ul>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Téléphone</th>
+                    <th>Adresse</th>
+                    <th>Date de Naissance</th>
+                    <th>Email</th>
+                    <th>Matieres</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($enseignants as $enseignant)
+                <tr>
+                    <td>{{ $enseignant->id }}</td>
+                    <td>{{ $enseignant->nom }}</td>
+                    <td>{{ $enseignant->prenom }}</td>
+                    <td>{{ $enseignant->telephone }}</td>
+                    <td>{{ $enseignant->address }}</td>
+                    <td>{{ $enseignant->date_naissance }}</td>
+                    <td>{{ $enseignant->email }}</td>
+                    <td>
+                        @foreach($enseignant->matieres as $matiere)
+                        {{ $matiere->nom }}@if(!$loop->last), @endif
+                        @endforeach
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+
+    {{ $enseignants->links() }}
 </div>
 @endsection
