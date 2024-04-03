@@ -3,13 +3,28 @@
 @section('content')
 <div class="container">
     <h2 class="my-4">Liste des Élèves</h2>
-    <form action="{{ route('eleves.search') }}" method="POST">
+    <form id="searchForm" action="/eleves/" method="post">
         @csrf
         <div class="form-group">
-            <input type="text" name="query" class="form-control w-75" placeholder="Rechercher avec ID...">
+            <input type="text" id="searchId" name="id" class="form-control w-75" placeholder="Rechercher avec ID...">
             <button type="submit" class="mt-4 mb-4 btn btn-primary">Rechercher</button>
         </div>
     </form>
+
+    <script>
+        document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var id = document.getElementById('searchId').value;
+            var action = "/eleves/" + id;
+            document.getElementById('searchForm').setAttribute('action', action);
+            this.submit();
+        });
+    </script>
+
+
+
+
+
     @if($eleves && $eleves->count() > 0)
     <table class="table">
         <thead>

@@ -49,8 +49,9 @@ class EleveController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Eleve $eleve)
+    public function show($id)
     {
+        $eleve = Eleve::findOrFail($id);
         return view('eleves.show', compact('eleve'));
     }
 
