@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('adresse');
             $table->string('email')->unique();
             $table->timestamps();
-            $table->foreignId('groupe_id')->constrained('groupes')->onDelete("cascade");
-            $table->foreignId('parente_id')->constrained('parentes')->onDelete("cascade");
+            $table->foreignId('groupe_id')->nullable()->constrained('groupes')->onDelete("cascade");
+            $table->foreignId('parente_id')->nullable()->constrained('parentes')->onDelete("cascade");
         });
     }
 

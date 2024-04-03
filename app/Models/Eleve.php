@@ -9,7 +9,7 @@ class Eleve extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['groupe_id'];
+    protected $fillable = ['groupe_id', "parente_id"];
 
     public function groupe()
     {

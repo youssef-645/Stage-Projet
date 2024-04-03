@@ -3,8 +3,7 @@
 @section('content')
 <div class="container">
     <h2 class="my-4">Liste des Élèves</h2>
-    <form id="searchForm" action="/eleves/" method="post">
-        @csrf
+    <form id="searchForm" action="/eleves/" method="get">
         <div class="form-group">
             <input type="text" id="searchId" name="id" class="form-control w-75" placeholder="Rechercher avec ID...">
             <button type="submit" class="mt-4 mb-4 btn btn-primary">Rechercher</button>
@@ -50,8 +49,8 @@
                 <td>{{ $eleve->email }}</td>
                 <td>{{ $eleve->groupe ? $eleve->groupe->nom : 'N/A' }}</td>
                 <td>
-                    @if($eleve->parents)
-                    @foreach($eleve->parents as $parent)
+                    @if($eleve->parentes)
+                    @foreach($eleve->parentes as $parent)
                     {{ $parent->nom }} {{ $parent->prenom }}<br>
                     @endforeach
                     @else
