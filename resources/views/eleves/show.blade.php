@@ -2,7 +2,23 @@
 
 @section('content')
 <div class="container">
-    <h2>Détails de l'élève</h2>
+    <div class="row">
+        <h2 class="col">Détails de l'élève</h2>
+        <div class="col my-2">
+            <form method="POST" class="d-inline" action="{{ route('eleves.destroy', $eleve->id) }}" onsubmit="return confirmDelete()">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger mr-3">Supprimer</button>
+            </form>
+            <script>
+                function confirmDelete() {
+                    return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?');
+                }
+            </script>
+
+            <button class="btn btn-success">Update</button>
+        </div>
+    </div>
     <table class="table">
         <tbody>
             <tr>
@@ -45,6 +61,7 @@
             </tr>
 
         </tbody>
+
     </table>
 </div>
 @endsection

@@ -2,6 +2,17 @@
 
 @section('content')
 <div class="container">
+    @if(session('success'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success') }}
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "{{ route('eleves.index') }}";
+        }, 3000);
+    </script>
+    @endif
+
     <h2 class="my-4">Liste des Élèves</h2>
     <form id="searchForm" action="/eleves/" method="get">
         <div class="form-group">
@@ -19,10 +30,6 @@
             this.submit();
         });
     </script>
-
-
-
-
 
     @if($eleves && $eleves->count() > 0)
     <table class="table">

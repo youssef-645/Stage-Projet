@@ -90,8 +90,9 @@ class EleveController extends Controller
     public function destroy(Eleve $eleve)
     {
         $eleve->delete();
-        return redirect()->route('eleves.index')->with('success', 'Eleve deleted successfully.');
+        return redirect()->route('eleves.index')->with('success', 'Élève supprimé.');
     }
+
 
     /**
      * Search for eleves by name or surname or both.
