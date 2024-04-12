@@ -3,13 +3,14 @@
 namespace Database\Seeders;
 
 use App\Models\Eleve;
+use App\Models\Enseignant;
 use App\Models\Matiere;
-use App\Models\Note;
+use App\Models\Examen;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Factory as Faker;
 
-class NoteSeeder extends Seeder
+class Examenseeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -22,11 +23,13 @@ class NoteSeeder extends Seeder
         for ($i = 0; $i < 140; $i++) {
             $eleve = Eleve::inRandomOrder()->first();
             $matiere = Matiere::inRandomOrder()->first();
-            Note::create([
-                'valeur' => $faker->randomFloat(2, 0, 20),
-                'date' => $faker->date(),
+            $enseignant = Enseignant::inRandomOrder()->first();
+
+            Examen::create([
+                'note' => $faker->randomFloat(2, 0, 20),
                 'eleve_id' => $eleve->id,
                 'matiere_id' => $matiere->id,
+                'enseignant_id' => $enseignant->id
             ]);
         }
     }

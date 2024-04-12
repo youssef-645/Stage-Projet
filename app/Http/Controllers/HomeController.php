@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Commande;
 use App\Models\Enseignant;
 use App\Models\Matiere;
-use App\Models\Note;
+use App\Models\Examen;
 
 class HomeController extends Controller
 {
@@ -17,7 +17,7 @@ class HomeController extends Controller
         $classCount = Classe::count();
         $enseignantCount = Enseignant::count();
         $matiereCount = Matiere::count();
-        $noteCount = Note::count();
+        $noteCount = Examen::count();
 
         return view('index', compact('classCount', 'enseignantCount', 'matiereCount', 'noteCount'));
     }

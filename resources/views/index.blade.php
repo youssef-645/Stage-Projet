@@ -43,14 +43,14 @@
         </div>
     </div>
 
-    <!-- Notes -->
+    <!-- examens -->
 
     <div class="col-md-6">
-        <div class="card sky-background clickable-card" data-route="{{ route('notes.index') }}" style="height: 150px">
+        <div class="card sky-background clickable-card" data-route="{{ route('examens.index') }}" style="height: 150px">
             <div class="card-body d-flex align-items-center justify-content-center">
                 <i class="fa fa-clipboard fa-5x text-white"></i>
                 <h3 class="ml-3 text-white">
-                    Les notes
+                    Les examens
                     <h1 class="badge m-2 bg-success badge-lg">{{ $noteCount }}</h1>
                 </h3>
             </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Liste des notes</h1>
+<h1>Liste des examens</h1>
 <table class="table">
     <thead>
         <tr>
@@ -12,16 +12,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($notes as $note)
+        @foreach($examens as $examen)
         <tr>
-            <td>{{ $note->eleve->nom }}</td>
-            <td>{{ $note->valeur }}</td>
-            <td>{{ $note->matiere->nom }}</td>
-            <td>{{ $note->date }}</td>
+            <td>{{ $examen->eleve->nom }}</td>
+            <td>{{ $examen->note }}</td>
+            <td>{{ $examen->matiere->nom }}</td>
+            <td>{{ $examen->created_at }}</td>
         </tr>
         @endforeach
     </tbody>
 </table>
 
-{{ $notes->links() }}
+{{ $examens->links() }}
 @endsection
