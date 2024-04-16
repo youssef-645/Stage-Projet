@@ -16,7 +16,7 @@
                 }
             </script>
 
-            <button class="btn btn-success">Update</button>
+            <a href="{{ route('eleves.edit', $eleve->id) }}" class="btn btn-success">Update</a>
         </div>
     </div>
     <table class="table">

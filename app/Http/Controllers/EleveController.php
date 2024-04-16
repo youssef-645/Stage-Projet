@@ -58,8 +58,9 @@ class EleveController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Eleve $eleve)
+    public function edit($id)
     {
+        $eleve = Eleve::findOrFail($id);
         return view('eleves.edit', compact('eleve'));
     }
 
