@@ -14,26 +14,24 @@
             });
         }, 2000);
     </script>
-
     @endif
 
     <h2 class="my-4">Liste des Élèves</h2>
-    <form id="searchForm" action="/eleves/" method="get">
-        <div class="form-group">
-            <input type="text" id="searchId" name="id" class="form-control w-75" placeholder="Rechercher avec ID...">
-            <button type="submit" class="mt-4 mb-4 btn btn-primary">Rechercher</button>
-        </div>
-    </form>
 
-    <script>
-        document.getElementById('searchForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            var id = document.getElementById('searchId').value;
-            var action = "/eleves/" + id;
-            document.getElementById('searchForm').setAttribute('action', action);
-            this.submit();
-        });
-    </script>
+    <form id="searchForm" action="{{ route('eleves.index') }}" method="get">
+        <div class="form-group">
+            <select id="groupe" name="groupe" class="form-control mb-3">
+                <option value="">Filtrer par groupes</option>
+                @foreach($groupes as $groupe)
+                <option value="{{ $groupe->id }}">{{ $groupe->nom }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
+            <input type="text" id="searchId" name="id" placeholder="Rechercher avec ID:" class="form-control">
+        </div>
+        <button type="submit" class="mt-4 btn btn-sm btn-primary">Rechercher</button>
+    </form>
 
     @if($eleves && $eleves->count() > 0)
     <table class="table">
@@ -43,9 +41,9 @@
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Date de Naissance</th>
-                <th>Adresse</th>
                 <th>Email</th>
                 <th>Groupe</th>
+                <th>Actions</th>
                 <th>Parents</th>
             </tr>
         </thead>
@@ -56,9 +54,16 @@
                 <td>{{ $eleve->nom }}</td>
                 <td>{{ $eleve->prenom }}</td>
                 <td>{{ $eleve->date_naissance }}</td>
-                <td>{{ $eleve->adresse }}</td>
                 <td>{{ $eleve->email }}</td>
                 <td>{{ $eleve->groupe ? $eleve->groupe->nom : 'N/A' }}</td>
+                <td>
+                    <a href="{{ route('eleves.edit', $eleve->id) }}" class="btn btn-sm btn-success">Modifier</a>
+                    <form action="{{ route('eleves.destroy', $eleve->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="mt-2 btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?')">Supprimer</button>
+                    </form>
+                </td>
                 <td>
                     @if($eleve->parentes)
                     @foreach($eleve->parentes as $parent)
@@ -72,9 +77,9 @@
             @endforeach
         </tbody>
     </table>
-    {{ $eleves->links() }} <!-- Pagination Links -->
+    {{ $eleves->links() }}
     @else
-    <p>Aucun élève trouvé.</p>
+    <p class="mt-3">Aucun élève trouvé.</p>
     @endif
 </div>
 @endsection

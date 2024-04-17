@@ -11,11 +11,23 @@ class EleveController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $eleves = Eleve::paginate(10);
+        $groupes = Groupe::all();
+        $query = Eleve::query();
 
-        return view('eleves.index', compact('eleves'));
+        if ($request->filled('groupe')) {
+            $query->where('groupe_id', $request->input('groupe'));
+        }
+
+
+        if ($request->filled('id')) {
+            $query->where('id', $request->input('id'));
+        }
+
+        $eleves = $query->paginate(10);
+
+        return view('eleves.index', compact('eleves', 'groupes'));
     }
 
     /**
