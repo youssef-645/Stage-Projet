@@ -6,11 +6,15 @@
     <div class="alert alert-success" role="alert">
         {{ session('success') }}
     </div>
-    <!-- <script>
+    <script>
         setTimeout(function() {
-            document.getElementsByClassName("alert").visiblity = "none";
-        }, 3000);
-    </script> -->
+            var alerts = document.querySelectorAll(".alert");
+            alerts.forEach(function(alert) {
+                alert.style.display = "none";
+            });
+        }, 2000);
+    </script>
+
     @endif
 
     <h2 class="my-4">Liste des Élèves</h2>
