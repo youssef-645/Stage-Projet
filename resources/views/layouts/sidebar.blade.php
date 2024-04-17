@@ -1,12 +1,12 @@
 <aside class="sidebar">
   <ul class="list-group">
     <li class="list-group-item list-group-item-action" data-route="{{ route('dashboard') }}">Dashboard</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('eleves.index') }}">Eleves</li>
+    <li class="list-group-item list-group-item-action" data-route="{{ route('classes.index') }}">Classes</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('enseignants.index') }}">Enseignates</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('matieres.index') }}">Matieres</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('examens.index') }}">Examens</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('parents.index') }}">Parents</li>
-    <li class="list-group-item list-group-item-action" data-route="{{ route('classes.index') }}">Classes</li>
-    <li class="list-group-item list-group-item-action" data-route="{{ route('eleves.index') }}">Eleves</li>
     <li class="list-group-item list-group-item-action" data-route="{{ route('account.info') }}">Account</li>
   </ul>
 </aside>

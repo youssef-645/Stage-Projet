@@ -21,7 +21,7 @@
     <form id="searchForm" action="{{ route('eleves.index') }}" method="get">
         <div class="form-group">
             <select id="groupe" name="groupe" class="form-control mb-3">
-                <option value="">Filtrer par groupes</option>
+                <option value="">Filtrer par groupes </option>
                 @foreach($groupes as $groupe)
                 <option value="{{ $groupe->id }}">{{ $groupe->nom }}</option>
                 @endforeach
@@ -30,7 +30,7 @@
         <div class="form-group">
             <input type="text" id="searchId" name="id" placeholder="Rechercher avec ID:" class="form-control">
         </div>
-        <button type="submit" class="mt-4 btn btn-sm btn-primary">Rechercher</button>
+        <button type="submit" class="my-4 btn btn-sm btn-primary">Rechercher</button>
     </form>
 
     @if($eleves && $eleves->count() > 0)
@@ -57,11 +57,11 @@
                 <td>{{ $eleve->email }}</td>
                 <td>{{ $eleve->groupe ? $eleve->groupe->nom : 'N/A' }}</td>
                 <td>
-                    <a href="{{ route('eleves.edit', $eleve->id) }}" class="btn btn-sm btn-success">Modifier</a>
+                    <a href="{{ route('eleves.edit', $eleve->id) }}" class="btn btn-sm btn-success">?</a>
                     <form action="{{ route('eleves.destroy', $eleve->id) }}" method="POST" style="display: inline;">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="mt-2 btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?')">Supprimer</button>
+                        <button type="submit" class="m-1 btn btn-sm btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet élève ?')">x</button>
                     </form>
                 </td>
                 <td>
