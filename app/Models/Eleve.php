@@ -21,7 +21,7 @@ class Eleve extends Model
         return $this->belongsToMany(Parente::class)->withTimestamps();
     }
 
-    public function notes()
+    public function examens()
     {
         return $this->hasMany(Examen::class);
     }

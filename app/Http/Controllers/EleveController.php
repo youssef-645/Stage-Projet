@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Eleve;
+use App\Models\Groupe;
 use Illuminate\Http\Request;
 
 class EleveController extends Controller
@@ -61,7 +62,8 @@ class EleveController extends Controller
     public function edit($id)
     {
         $eleve = Eleve::findOrFail($id);
-        return view('eleves.edit', compact('eleve'));
+        $groupes = Groupe::all();
+        return view('eleves.edit', compact('eleve', 'groupes'));
     }
 
     /**

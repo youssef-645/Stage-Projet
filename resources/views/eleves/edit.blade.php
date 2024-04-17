@@ -35,7 +35,17 @@
                 <div class="form-group row">
                     <label for="email" class="col-sm-3 col-form-label">Email:</label>
                     <div class="col-sm-9">
-                        <input type="email" class="form-control" id="email" name="email" value="{{ old('email', $eleve->email ?? '') }}">
+                        <input type="email" class="form-control mb-3" id="email" name="email" value="{{ old('email', $eleve->email ?? '') }}">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="groupe_id" class="col-sm-3 col-form-label">Groupe:</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" id="groupe_id" name="groupe_id">
+                            @foreach($groupes as $groupe)
+                            <option value="{{ $groupe->id }}" {{ $eleve->groupe_id == $groupe->id ? 'selected' : '' }}>{{ $groupe->nom }}</option>
+                            @endforeach
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
