@@ -6,11 +6,11 @@
     <div class="alert alert-success" role="alert">
         {{ session('success') }}
     </div>
-    <script>
+    <!-- <script>
         setTimeout(function() {
-            window.location.href = "{{ route('eleves.index') }}";
+            document.getElementsByClassName("alert").visiblity = "none";
         }, 3000);
-    </script>
+    </script> -->
     @endif
 
     <h2 class="my-4">Liste des Élèves</h2>

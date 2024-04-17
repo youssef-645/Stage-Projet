@@ -9,7 +9,7 @@ class Eleve extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['groupe_id', "parente_id"];
+    protected $guarded = [];
 
     public function groupe()
     {
@@ -23,6 +23,6 @@ class Eleve extends Model
 
     public function notes()
     {
-        return $this->hasMany(Note::class);
+        return $this->hasMany(Examen::class);
     }
 }

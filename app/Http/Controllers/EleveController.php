@@ -67,29 +67,36 @@ class EleveController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Eleve $eleve)
+    public function update(Request $request, int $id)
     {
+
+        $eleve = Eleve::findOrFail($id);
+
         // Validation
         $request->validate([
             'nom' => 'required|string',
             'prenom' => 'required|string',
             'date_naissance' => 'required|date',
             'adresse' => 'required|string',
-            'email' => 'required|email|unique:eleves,email,' . $eleve->id,
-            'groupe_id' => 'required|exists:groupes,id',
-            'parente_id' => 'required|exists:parentes,id',
+            'email' => 'required|email'
+            // 'groupe_id' => 'required|exists:groupes,id',
+            // 'parente_id' => 'required|exists:parentes,id',
         ]);
 
+        // Update only the fields present in the request
         $eleve->update($request->all());
+
 
         return redirect()->route('eleves.index')->with('success', 'Eleve updated successfully.');
     }
 
+
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Eleve $eleve)
+    public function destroy(int $id)
     {
+        $eleve = Eleve::findOrFail($id);
         $eleve->delete();
         return redirect()->route('eleves.index')->with('success', 'Élève supprimé.');
     }

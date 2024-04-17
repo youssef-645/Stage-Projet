@@ -16,7 +16,7 @@ class EleveSeeder extends Seeder
     {
         $faker = Faker::create();
 
-        for ($i = 0; $i < 120; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $groupe = Groupe::inRandomOrder()->first();
 
             $eleve = Eleve::create([

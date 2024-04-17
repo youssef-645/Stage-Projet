@@ -4,6 +4,11 @@
 <div class="container">
     <div class="row">
         <h2 class="col">Détails de l'élève</h2>
+        @if(session('success'))
+        <div id="tempAlert" class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+        @endif
         <div class="col my-2">
             <form method="POST" class="d-inline" action="{{ route('eleves.destroy', $eleve->id) }}" onsubmit="return confirmDelete()">
                 @csrf
@@ -64,4 +69,9 @@
 
     </table>
 </div>
+<script>
+    setTimeout(function() {
+        $('#tempAlert').fadeOut('slow');
+    }, 2000);
+</script>
 @endsection
