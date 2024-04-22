@@ -11,6 +11,8 @@ use App\Http\Controllers\GroupeController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MatiereController;
 use App\Http\Controllers\ParentController;
+use App\Models\Examen;
+use App\Models\Parente;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +34,9 @@ Route::middleware(['auth', 'auth.admin'])->group(function () {
 
     Route::post('/eleves/search', [EleveController::class, 'search'])->name('eleves.search');
     Route::post('/enseignants/search', [EnseignantController::class, 'search'])->name('enseignants.search');
+    Route::post('/matieres/search', [MatiereController::class, 'search'])->name('matieres.search');
+    Route::post('/examens/search', [ExamenController::class, 'search'])->name('examens.search');
+    Route::post('/parents/search', [ParentController::class, 'search'])->name('parents.search');
 
     Route::resource("/eleves", EleveController::class);
     Route::resource("/enseignants", EnseignantController::class);

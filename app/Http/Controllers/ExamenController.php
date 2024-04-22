@@ -10,6 +10,15 @@ class ExamenController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $examens = Examen::where('nom', 'like', "%$query%")
+            ->get();
+
+        return view('examens.index', compact('examens'));
+    }
     public function index()
     {
         $examens = Examen::orderBy('created_at', 'desc')->paginate(10);

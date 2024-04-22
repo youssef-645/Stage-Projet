@@ -10,6 +10,15 @@ class MatiereController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $matieres = Matiere::where('nom', 'like', "%$query%")
+            ->get();
+
+        return view('matieres.index', compact('matieres'));
+    }
     public function index()
     {
         $matieres = Matiere::with('groupes', 'classes')->paginate(10); // Paginate avec 10 éléments par page

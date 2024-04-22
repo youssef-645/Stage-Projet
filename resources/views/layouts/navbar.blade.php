@@ -1,4 +1,4 @@
-<nav class="navbar  navbar-expand-lg justify-content-between" style="background-color: dodgerblue;">
+<nav class="navbar  navbar-expand-lg justify-content-between" style="background-color: grey;">
   <a class="mx-4 navbar-brand text-white font-weight-bold" href="#">
     <i class="fa fa-solid fa-school m-3"></i>
     Ecole Management</a>

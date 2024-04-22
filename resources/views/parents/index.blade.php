@@ -1,8 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="mt-4">Liste des parents</h1>
-<a class="btn btn-primary m-4" href="{{ route('parents.create') }}">Ajouter un parent</a>
+<div class="d-flex">
+    <h1 class="mt-4 pt-4">Liste des parents</h1>
+    <a class="btn  btn-primary m-5" href="{{ route('parents.create') }}">Ajouter un parent</a>
+</div>
+<form action="{{ route('parents.search') }}" class="my-3" method="POST">
+    <div class="form-group">
+        <input type="text" name="query" class="form-control w-75" placeholder="Rechercher...">
+        <button type="submit" class="mt-4 mb-4 btn btn-primary">Rechercher</button>
+    </div>
+</form>
 <table class="table table-hover">
     <thead>
         <tr>

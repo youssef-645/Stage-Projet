@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <!-- @include("layouts.navbar") -->
+    @include("layouts.navbar")
 
     <main class="row">
         <div class="col-3">

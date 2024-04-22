@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <h2 class="mb-4">Edit Student</h2>
+    <h2 class="mb-4">Edit Eleve</h2>
     <div class="card">
         <div class="card-body">
             <form action="{{ route('eleves.update', $eleve->id) }}" method="POST">

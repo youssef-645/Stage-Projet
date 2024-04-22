@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class ParentController extends Controller
 {
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $parents = Parente::where('nom', 'like', "%$query%")
+            ->get();
+
+        return view('parents.index', compact('parents'));
+    }
     /**
      * Display a listing of the resource.
      */
