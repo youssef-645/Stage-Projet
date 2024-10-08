@@ -1,6 +1,8 @@
-#mote de pass: admin:admin
-#run:
+INSTRUCTIONS:
 
+#mote de pass: admin:admin
+
+#run:
 composer update
 composer install
 
